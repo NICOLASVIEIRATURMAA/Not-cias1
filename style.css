@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;    
     font-family: "Inter", sans-serif;
-    -webkit-font-smoothing: antiaLiased;
+    -webkit-font-smoothing: antialiased;
 }
 
 :root {
@@ -28,7 +28,6 @@ body.escurecer::before{
     background: rgba(0, 0, 26, 0.5);
     top: 0;
     left: 0;
-
 }
 
 header {
@@ -36,17 +35,15 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-
     max-width: 1110px;
     margin-inline: auto;
-                                                                                                                                                                                   
 }
 
 header button {
     border: none;
     background: none;
     width: fit-content;
-
+    cursor: pointer;
 }
 
 header nav.mobile {
@@ -64,10 +61,9 @@ header nav.mobile {
     gap: 1.5rem;
 
     transition: 0.7s;
-
 }
 
-.header nav.mobile.abrir{
+header nav.mobile.abrir{
     right: 0;
 }
 
@@ -76,27 +72,29 @@ header nav button {
     margin-bottom: 4rem;
 }
 
-header.mobile a{
+header .mobile a{
     text-decoration: none;
     color: var(--dark-blue);
     font-size: 1.125rem;
     line-height: 1.5rem;
 }
 
-main{
+header .desktop {
+    display: none;
+}
+
+main {
     max-width: 1110px;
     margin-inline: auto;
 }
 
 .primeira-secao {
     margin-bottom: 4rem;
-
 }
 
 .primeira-secao img {
     width: 100%;
     margin-bottom: 1.5rem;
-
 }
 
 .primeira-secao h1 {
@@ -104,15 +102,13 @@ main{
     line-height: 100%;
     color: var(--dark-blue);
     margin-bottom: 1rem;
-
 }
 
-.primeira-secao p{
+.primeira-secao p {
     font-size: 0.9375rem;
     line-height: 1.625rem;
     color: var(--gunmetal);
     margin-bottom: 1.5rem;
-
 }
 
 .primeira-secao button {
@@ -123,7 +119,7 @@ main{
     color: var(--almost-white);
     font-weight: 700;
     font-size: 0.875rem;
-    letter-spacing: 0.25rem;
+    letter-spacing: 0.275rem;
     line-height: 1.5rem;
 }
 
@@ -146,7 +142,7 @@ main{
     margin-bottom: 2.2rem;
 }
 
-.segunda-secao h3{
+.segunda-secao h3 {
     color: var(--almost-white);
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -154,7 +150,7 @@ main{
     margin-bottom: 0.5rem;
 }
 
-.segunda-secao p{
+.segunda-secao p {
     color: var(--SILVER);
     font-size: 0.9375rem;
     line-height: 1.625rem;
@@ -169,7 +165,6 @@ main{
 
 .terceira-secao img {
     max-width: 6.25rem;
-
 } 
 
 .terceira-secao strong {
@@ -186,43 +181,17 @@ main{
     margin-block: 0.6rem;
 }
 
+.terceira-secao a {
+    text-decoration: none;
+}
+
 .terceira-secao p {
     font-size: 0.9375rem;
     line-height: 1.625rem;
     color: var(--gunmetal);
 }
 
-@media(min-widtch: 1110px) {
-
-    main{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1.75rem;
-    }
-
-    .primeira-secao{
-        grid-column: 1 / 3;
-
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .primeira-secao picture{
-        grid-column: 1 / 3;
-    }
-
-    .primeira-secao img{
-        margin: 0;
-    }
-
-    .primeira-secao h1{
-        font-size: 3.5rem;
-    }
-
-    .segunda-secao h2{
-        font-size: 2.5rem;
-    }
-
+@media (min-width: 1110px) {
     header > button {
         display: none;
     }
@@ -237,5 +206,52 @@ main{
         line-height: 1.625rem;
         text-decoration: none;
         color: var(--gunmetal);
+    }
+
+    header .desktop a:hover {
+        color: var(--vermillion);
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.75rem;
+    }
+
+    .primeira-secao {
+        grid-column: 1 / 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.75rem;
+    }
+
+    .primeira-secao picture {
+        grid-column: 1 / 3;
+    }
+
+    .primeira-secao img {
+        margin: 0;
+    }
+
+    .primeira-secao h1 {
+        font-size: 3.5rem;
+    }
+
+    .primeira-secao button:hover {
+        background-color: var(--dark-blue);
+        cursor: pointer;
+    }
+
+    .segunda-secao h2 {
+        font-size: 2.5rem;
+    }
+
+    .terceira-secao {
+        display: flex;
+        grid-column: 1 / 4;
+    }
+
+    .terceira-secao h2:hover {
+        color: var(--vermillion);
     }
 }
